@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 let fs = require('fs');
 
 let obj = {};
@@ -35,10 +37,7 @@ let obj = {};
     };
   })
 
-  [
-    //写文件
-    ("writeFile", "appendFile")
-  ].forEach((item) => {
+  ["writeFile", "appendFile"].forEach((item) => {
     obj[item] = function (url, data, encoding = null) {
       if (/\.(js|css|html|txt|md)$/.test(url)) {
         encoding = "utf-8";

@@ -1,10 +1,10 @@
-// 实现一个登录的功能
+// @ts-nocheck
 let express = require("express");
 let qs = require("qs");
-let session = require("express-session"); //session保存在服务器上
+let session = require("express-session");
 let { readFile, writeFile } = require("./promiseFs");
 let app = express();
-//监听端口
+
 app.listen(3000, function () {
   console.log("后端接口服务 起于 3000");
 });
@@ -56,6 +56,7 @@ function setData(url, key, req, res, next) {
 app.use((req, res, next) => {
   setData("./json/banner.json", "banner", req, res, next);
 });
+
 app.use(
   session({
     //在这个中间件之后 会在 req上多了一个 session的属性
@@ -68,6 +69,7 @@ app.use(
     },
   })
 );
+
 app.get("/banner", (req, res) => {
   //发送的数据
   res.send({
