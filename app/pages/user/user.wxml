@@ -1,0 +1,37 @@
+<view class="user_box">
+	<view class="userinfo">
+		<button 
+			wx:if="{{!hasUserInfo && canIUse }}"
+			open-type="getUserInfo"
+			bindgetuserinfo="getUserInfo"
+		>
+			获取头像昵称
+		</button>
+		<block wx:else>
+			<!-- bindtap -->
+			<image bindtap="bindViewTap" class="userInfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</block>
+	</view>
+
+	<!-- 购物车 -->
+	<view class="cart_box">
+		<view class="h1">购物车列表</view>
+		<view class="img_box" wx:for="{{cartList}}"  wx:key='id'>
+			<view class="img_box">
+				<image src="{{item.img}}"></image>
+			</view>
+			<view class="content_box">
+				<view class="til">{{item.title}}</view>
+				<view class="price">单价: {{item.price}}</view>
+				<view class="count">
+					<input value="{{item.count}}" bindinput="change"  data-item='{{item}}'></input>
+					件
+				</view>
+			</view>
+		</view>
+		<view class="total_box">
+			总价{{total}}
+		</view>
+	</view>
+</view>
