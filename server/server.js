@@ -20,7 +20,6 @@ app.use((req, res, next) => {
   req.method == "OPTIONS" ? res.send("OK") : next();
 });
 
-// 把post请求的参数 转成普通对象 存放到req.body上
 app.use((req, res, next) => {
   let str = "";
   req.on("data", (chunk) => {
@@ -38,7 +37,6 @@ app.use((req, res, next) => {
   });
 });
 
-// 把读取数据的操作放到中间件处理
 function setData(url, key, req, res, next) {
   readFile(url)
     .then((data) => {
@@ -46,7 +44,6 @@ function setData(url, key, req, res, next) {
       next();
     })
     .catch((err) => {
-      // 读取失败 给前端500
       res.status(505);
       res.send("505");
     });

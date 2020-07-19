@@ -1,0 +1,73 @@
+<view class="container">
+	<!-- banner -->
+	<swiper
+		indicator-dots="{{true}}"
+		autoplay="{{true}}"
+	  interval="{{2000}}"
+	  duration="{{200}}"
+	  circular="{{true}}"
+	>
+		<block>
+		<!-- *this:表示item本身  aspectFill:缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来 -->
+			<swiper-item wx:for="{{bannerList}}" wx:key="*this">
+				<image
+					class="img"
+					src="{{item}}"
+					mode="aspectFill"
+				></image>
+			</swiper-item>
+		</block>
+	</swiper>
+
+	<!-- 内容 -->
+	<view class="know_js">
+		<view class="till">认识js</view>
+		<image class="video_icon" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2440442736,1977176025&fm=26&gp=0.jpg">
+			<view class="play_icon" catchtap="showKonw">
+				<image src="../images/img.jpg"></image>
+			</view>
+		</image>
+		<!-- 弹框组件 -->
+		<dialog wx:if="{{showKnow}}" bindclose="closeKnow">
+			<video
+				class="video_box"
+				src="http://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4"
+				object-fit="cover"
+			></video>
+		</dialog>
+	</view>
+
+	<!-- 信息 -->
+	<view class="js_thing">
+		<view class="til">js发展</view>
+		<image class="video_box" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=996594419,1342226511&fm=26&gp=0.jpg">
+			<view class="play_icon" catchtap="showjs">
+				<image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595174881979&di=83d9ca11738c1b366f511c6781591e6f&imgtype=0&src=http%3A%2F%2Fimg2.mukewang.com%2F59ae0e2a0001307706000338.jpg">
+			</view>
+		</image>
+
+		<!-- 弹框 -->
+		<dialog wx:if="{{showjs}}" bindclose="closejs">
+			<video
+				class="video_box"
+				src="http://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4",
+				object-fit="cover"
+			></video>
+		</dialog>
+	</view>
+
+	<!-- 限时公开课 -->
+	<view class="public_class_box">
+		<view class="til">限时免费公开课</view>
+		<view class="list_box">
+			<view
+				class="list"
+				wx:for="{{classList}}"
+				wx:key="img"
+			>
+				<image src="{{item.img}}"></image>
+				<text>{{item.text}}</text>
+			</view>
+		</view>
+	</view>
+</view>

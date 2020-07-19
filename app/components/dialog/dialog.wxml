@@ -1,0 +1,7 @@
+<view class="dialog_box">
+	<!--  catchtap阻止向上冒泡 -->
+	<view class="mask" catchtap="click"></view>
+	<view class="content_box">
+		<slot />
+	</view>
+</view>

@@ -1,0 +1,43 @@
+{
+	"pages": [
+		 "pages/user/user",
+		 "pages/class/class",
+		 "pages/index/index",
+		 "pages/classInfo/classInfo",
+		 "components/dialog/dialog",
+		 "pages/logs/logs"
+	],
+	"window": {
+		"backgroundTextStyle": "dark",
+		"backgroundColor": "#fff", 
+		"navigationBarBackgroundColor": "#a3e2c5", 
+		"navigationBarTitleText": "学习课堂", 
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"color": "#333",
+		"selectedColor": "#a3e2c5",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页", 
+				"iconPath": "imgs/home_1.jpg",
+				"selectedIconPath": "imgs/home_2.jpg" 
+			},
+			{
+				"pagePath": "pages/class/class",
+				"text": "课程中心",
+				"iconPath": "imgs/class_1.jpg",
+				"selectedIconPath": "imgs/class_2.jpg"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"text": "我的",
+				"iconPath": "imgs/user_1.jpg",
+				"selectedIconPath": "imgs/user_2.jpg"
+			}
+		]
+	},
+	"style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
