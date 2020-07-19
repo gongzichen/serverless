@@ -1,0 +1,47 @@
+<view class="class_box">
+	<view class="h1">课程代表</view>
+	<view class="list_one">
+		<view class="h3">0基本课程</view>
+		<navigator wx:for="{{level1}}"
+			url='{{ "/pages/classInfo/classInfo?til="+item.title+ "&img="+item.img+"&id="+item.id+"&price="+item.price}}' 
+			wx:key='id'
+		>
+			<view class="item">
+				<image src="{{item.img}}"></image>
+			</view>
+
+			<view class="content_box">
+				<view class="til">{{item.title}}</view>
+				<view class="desc">课程描述{{item.title}}</view>
+				<view class="bot_box">
+					<view>初级</view>
+					<view>{{item.count}}份</view>
+					<view>${{item.price}}</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
+
+	<view class="list_one">
+		<view class="h3">前端工程化</view>
+		<navigator wx:for="{{level2}}" 
+			url='{{ "/pages/classInfo/classInfo?til="+item.title+ "&img="+item.img+"&id="+item.id+"&price="+item.price}}'
+			wx:key='id'
+		>
+			<view class="item">
+				<view class="item_box">
+					<image src="{{item.img}}"></image>
+				</view>
+				<view class="content_box">
+					<view class="til">{{item.title}}</view>
+					<view class="desc">描述{{item.title}}</view>
+					<view class="bot_box">
+						<view>初级</view>
+						<view>{{item.count}}份</view>
+						<view>${{item.price}}</view>
+					</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
+</view>

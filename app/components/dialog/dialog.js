@@ -1,3 +1,4 @@
+// @ts-nocheck
 Component({
 	// 组件的属性 
 	methods: {
